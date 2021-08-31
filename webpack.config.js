@@ -1,15 +1,12 @@
 const { merge } = require("webpack-merge");
-const singleSpaDefaults = require("webpack-config-single-spa");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const singleSpaDefaults = require("webpack-config-single-spa-react");
 
 module.exports = (webpackConfigEnv, argv) => {
-  const orgName = "workshop";
   const defaultConfig = singleSpaDefaults({
-    orgName,
-    projectName: "root-config",
+    orgName: "workshop",
+    projectName: "app-home",
     webpackConfigEnv,
     argv,
-    disableHtmlGeneration: true,
   });
 
   return merge(defaultConfig, {
